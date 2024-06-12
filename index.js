@@ -12,6 +12,7 @@ import varMiddleware from './middleware/var.js'
 import cookieParser from "cookie-parser";
 import userMiddleware from "./middleware/user.js";
 import ifequal from './utils/index.js'
+import MongoStore from 'connect-mongo'
 
 dotenv.config()
 
@@ -30,7 +31,12 @@ app.set("views", "./views");
 app.use(express.urlencoded({extended:true}))
 app.use(express.static('public'))
 app.use(express.json())
-app.use(session({secret:"Sammi",resave:false,saveUninitialized:false}))
+app.use(session({
+  secret: process.env.JWT_SECRET,
+  resave: false,
+  saveUninitialized: true,
+  store: MongoStore.create({ mongoUrl: process.env.MONGO_URI })
+}));
 app.use(cookieParser())
 app.use(flash())
 app.use(varMiddleware)
