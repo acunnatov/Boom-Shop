@@ -1,0 +1,12 @@
+<div class="container product-container">
+  <div class="card mb-4 box-shadow">
+    <img src="{{product.image}}" class="card-img-top product-img" alt="{{product.title}}">
+    <div class="card-body product-details">
+      <h1 class="card-title product-title">{{product.title}}</h1>
+      <h2 class="product-price">${{product.price}}</h2>
+      <p class="card-text product-description">{{product.description}}</p>
+      <p class="product-meta">Added by: {{product.user.name}}</p>
+      <p class="product-meta">Created at: {{product.formattedCreatedAt}}</p>
+    </div>
+  </div>
+</div>

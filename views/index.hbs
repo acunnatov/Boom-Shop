@@ -1,0 +1,44 @@
+{{#if products.length}}
+<div class="album py-5 bg-light">
+  <div class="container">
+    <div class="row">
+      {{#each products}}
+      <div class="col-md-4">
+        <div class="card mb-4 box-shadow">
+          <img class="card-img-top" alt="{{this.title}}" src="{{this.image}}" style="height: 225px; width: 100%; display: block;">
+          <div class="card-body">
+            <h5 class="card-title">{{this.title}}</h5>
+            <div>
+                <p class="mb-0 date-text">{{this.formattedCreatedAt}}</p>
+              </div>
+            <p class="card-text">{{this.description}}</p>
+            <div class="d-flex justify-content-between align-items-center mt-3">
+              <div>
+                <p class="mb-0"><b>{{this.user.name}}</b></p>
+              </div>
+              <div class="text-right">
+                <p class="price mb-0">${{this.price}}</p>
+              </div>
+            </div>
+            <div class="d-flex justify-content-between align-items-center mt-3">
+              
+              <div class="btn-group">
+                <a type="button" class="btn btn-sm btn-outline-primary" href="/product/{{_id}}" style="margin-right: 5px;">Detail</a>
+                {{#if @root.token}}
+                {{#ifequal this.user @root.userId}}
+                <a type="button" class="btn btn-sm btn-outline-secondary" href="/edit-product/{{_id}}" style="margin-right: 5px;">Edit</a>
+                <form action="/delete-product/{{_id}}" method="post">
+                   <button type="submit" class="btn btn-sm btn-outline-danger" style="margin-right: 5px;">Delete</button>
+                </form>
+                {{/ifequal}}
+                {{/if}}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      {{/each}}
+    </div>
+  </div>
+</div>
+{{/if}}

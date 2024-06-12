@@ -1,0 +1,31 @@
+<!-- Login Form -->
+<div style="display: flex; height: 70vh; align-items: center; justify-content: center;">
+  <div class="container" style="max-width: 400px;">
+    <div class="card shadow-sm">
+      <div class="card-body">
+        <h2 class="card-title text-center mb-4">Login</h2>
+        {{#if loginError}}
+          <div class="alert alert-warning alert-dismissible fade show" role="alert">
+            {{loginError}}
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+        {{/if}}
+        <form action="/login" method="post">
+          <div class="mb-3">
+            <label for="email" class="form-label">Email address</label>
+            <input type="email" class="form-control" name="email" id="email" placeholder="Enter email" required>
+          </div>
+          <div class="mb-3">
+            <label for="password" class="form-label">Password</label>
+            <input type="password" class="form-control" name="password" id="password" placeholder="Password" required>
+          </div>
+          <div class="d-grid">
+            <button type="submit" class="btn btn-info btn-block">Login</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,27 @@
+<div class="container px-0">
+  <header>
+    <div class="d-flex flex-column flex-md-row align-items-center p-4 mb-3 bg-white border-bottom shadow-sm w-100">
+      <span style="margin-right:20px">
+        <img src="/logo.svg">
+      </span>
+      <h4 class="my-0 mr-md-auto font-weight-normal">
+        <a class="p-2 {{#if isBoomShop}}text-dark font-weight-bold text-decoration-none{{else}}text-dark text-decoration-none{{/if}}" href='/' class="text-dark text-decoration-none">Boom Shop</a>
+      </h4>
+
+      <nav class="my-2 my-md-0 mr-md-3 d-flex align-items-center">
+        <a class="p-2 {{#if isProducts}}text-dark font-weight-bold text-decoration-none{{else}}text-dark text-decoration-none{{/if}}" href="/products">Products</a>
+        <a class="p-2 {{#if isAdd}}text-dark font-weight-bold text-decoration-none{{else}}text-dark text-decoration-none{{/if}}" href="/add">Add</a>
+        <div class="btn-group" role="group" aria-label="Basic mixed styles example">
+          {{#if token}}
+            <button type="button" class="btn btn-danger">
+              <a class="text-light text-decoration-none" href="/logout">Logout</a>
+            </button>
+          {{else}}
+            <a class="btn btn-info {{#if isLogin}}active{{/if}} login-button" href="/login">Login</a>
+            <a class="btn btn-success active{{#if isRegister}}btn btn-success{{/if}} register-button" href="/register">Register</a>
+          {{/if}}
+        </div>
+      </nav>
+    </div>
+  </header>
+</div>
