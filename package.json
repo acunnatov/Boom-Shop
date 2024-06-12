@@ -6,7 +6,7 @@
   "type": "module",
   "scripts": {
     "start": "node index.js",
-    "dev":"npm run nodemon"
+    "dev": "nodemon index.js" // Updated to run nodemon directly
   },
   "keywords": [],
   "author": "",
