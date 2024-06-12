@@ -8,8 +8,8 @@ const templatePath = 'C:/Users/user/Desktop/JavaScript/app/views/index.hbs';
 const outputPath = 'C:/Users/user/Desktop/JavaScript/app/dist/index.html';
 
 // MongoDB connection URI and database details
-const uri = process.env.MONGO_URI;
-const dbName = 'test';
+const uri = 'mongodb+srv://positiveprogrammerr:8HnaccoLig1LeSiW@cluster0.nfxypbf.mongodb.net/'; // Replace with your connection string
+const dbName = 'test'; // Adjust with your actual database name
 
 const compileTemplate = async (templatePath, outputPath) => {
   // Read and compile the Handlebars template
